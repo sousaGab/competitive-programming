@@ -1,10 +1,9 @@
+dev/
 node_modules/
-default.js
-default.cpp
-default.c
+default.*
+trying.*
 *.in
 *.out
 *.txt
 *.exe
-dev/
 .vscode
