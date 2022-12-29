@@ -1,0 +1,9 @@
+node_modules/
+default.js
+default.cpp
+default.c
+*.in
+*.out
+*.txt
+*.exe
+dev/

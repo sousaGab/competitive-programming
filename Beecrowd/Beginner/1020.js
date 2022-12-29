@@ -1,0 +1,10 @@
+var input = require("fs").readFileSync("/dev/stdin", "utf8");
+var lines = input.split("\n");
+var all_days = Number(lines[0]);
+var years = Math.floor(all_days / 365);
+all_days = all_days % 365;
+var month = Math.floor(all_days / 30);
+all_days = all_days % 30;
+console.log(`${years} ano(s)`);
+console.log(`${month} mes(es)`);
+console.log(`${all_days} dia(s)`);
