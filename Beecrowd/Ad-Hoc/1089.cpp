@@ -3,7 +3,7 @@
 #define sc(a) scanf("%d", &a)
 
 using namespace std;
-int n, x, ans, arr[10000], nxt, pv;
+int n, x, ans, arr[10010], nxt, pv;
 
 int main()
 {
