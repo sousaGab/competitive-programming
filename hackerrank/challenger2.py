@@ -18,6 +18,7 @@ import sys
 def flippingMatrix(matrix):
     sum = 0
     sz = len(matrix)
+    
     for i in range(0, sz//2):
         for j in range (0, sz//2):
             a,b = i, sz-i-1
