@@ -1,39 +1,36 @@
-from collections import deque
-
 N, Q = input().split()
 N = int(N)
 Q = int(Q)
 
-l1 = list(i for i in range(1, N+1))
-l2 = list(0 for _ in range(1, N+1))
 
-x = deque(l1)
-y = deque(l2)
+arr = list([i,0] for i in range(1, N+1))
+
+h = 0
 
 for _ in range(0, Q):
-    
+        
     q, v = input().split()
     
     if q == '1' :
+        nxt = (h+N-1)%N
         if v == 'U':
-            x.appendleft(x[0])
-            y.appendleft(y[0]+1)
+            arr[nxt][1] = arr[h][1] + 1
+            arr[nxt][0] = arr[h][0]
             
         elif v == 'D':
-            x.appendleft(x[0])
-            y.appendleft(y[0]-1)
+            arr[nxt][1] = arr[h][1] - 1
+            arr[nxt][0] = arr[h][0]
             
         elif v == 'R':
-            x.appendleft(x[0]+1)
-            y.appendleft(y[0])
+            arr[nxt][0]  = arr[h][0] + 1
+            arr[nxt][1] = arr[h][1]
             
         elif v == 'L':
-            x.appendleft(x[0]-1)
-            y.appendleft(y[0])
-            
-        x.pop()
-        y.pop()
-
+            arr[nxt][0] = arr[h][0] - 1
+            arr[nxt][1] = arr[h][1]
+        h = nxt
     else:
-        print(f'{x[int(v)-1]} {y[int(v)-1]}')
+        
+        p = (int(v) + (h+N-1))%N
+        print(f'{arr[p][0]} {arr[p][1]}')
     
